@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Staff Orders Page</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Staff Orders</h1>
+
+    <h2>Delete Order</h2>
+    <form method='POST'>
+        <label for="pass">Passcode</label>
+        <input type="text" name="pass"> <br>
+        <label for="pass">Order Number</label>
+        <input type="text" name="order"> <br>
+        <input type="submit" value="Log In">
+    </form>
+
+    <h2>Orders</h2>
+    <% orders_data.forEach(function(order) { %>
+        <h3>Order Number: <%= order.order_num %></h3>
+        <div>Name: <%= order.name %></div>
+        <div>Phone: <%= order.phone %></div>
+        <div>Order: <%= order.order %></div>
+        <br>
+        <% }); %>
+  </body>
+</html>

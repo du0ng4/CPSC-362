@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reviews</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <h1>Reviews</h1>
+    <p>Welcome to the Reviews Page!</p>
+
+    <h2>Upload reviews</h2>
+    <form method="POST">
+      <label for="name"> Username:</label>
+      <input type="text" name="username"> <br>
+
+      <input type="radio" name="rating" value=1 id="rating1">
+      <label for="rating1">1 Star</label>
+      <input type="radio" name="rating" value=2 id="rating2">
+      <label for="rating1">2 Stars</label>
+      <input type="radio" name="rating" value=3 id="rating3">
+      <label for="rating1">3 Stars</label>
+      <input type="radio" name="rating" value=4 id="rating4">
+      <label for="rating1">4 Stars</label>
+      <input type="radio" name="rating" value=5 id="rating5">
+      <label for="rating1">5 Stars</label>
+      <br>
+
+      <label for="review"> Review: </label> <br>
+      <textarea name="review" cols="30" rows="10"></textarea><br>
+      
+      <input type="submit" value="Submit Form">
+    </form>
+
+    <div>
+      <h2>Reviews</h3>
+      <% review_data.forEach(function(item) { %>
+        <h3>User: <%= item.name %></h3>
+        <div>Rating: <%= item.rating %></div>
+        <div>Review: <%= item.review %></div>
+        <br>
+        <% }); %>
+    </div>
+  </body>
+</html>

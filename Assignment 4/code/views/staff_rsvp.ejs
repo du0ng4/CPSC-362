@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff RSVP</title>
+</head>
+<body>
+  <form method='post'>
+      <label for="pass">Passcode</label>
+      <input type="text" name="pass"> <br>
+      <input type="submit" value="Pop Waitlist">
+  </form>
+
+  <h2>Waitlist</h2>
+  <% rsvp_data.forEach(function(person) { %>
+    <h3>Position: <%= person.position %></h3>
+    <div>Name: <%= person.name %></div>
+    <div>Party Size: <%= person.size %></div>
+    <br>
+    <% }); %>
+</body>
+</html>
